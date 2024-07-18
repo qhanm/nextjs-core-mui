@@ -41,5 +41,7 @@ export const createCustomTheme = (mode: ITheme) => {
       info: { main: colors.secondary },
       success: { main: colors.secondary },
     },
+    typography: {},
+    components: {},
   });
 };
