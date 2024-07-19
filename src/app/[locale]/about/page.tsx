@@ -1,16 +1,19 @@
-"use client";
+// "use client";
 import { useSettingContext } from "@/@core/hooks/useSettingContext";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { getDictionary } from "../dictionaries";
 
-export default function AboutPage() {
-  const { setTheme } = useSettingContext();
+export default async function AboutPage({ params }: any) {
+  const dict = await getDictionary(params.locale); // en
+  console.log(dict.about.title);
+  // const { setTheme } = useSettingContext();
   return (
     <div>
       <Typography variant="h1" component="h1">
         Hello, Material-UI in Next.js!
       </Typography>
-      <Button
+      {/* <Button
         variant="contained"
         color="primary"
         onClick={() => setTheme("light")}
@@ -23,7 +26,7 @@ export default function AboutPage() {
         onClick={() => setTheme("dark")}
       >
         Secondary Button
-      </Button>
+      </Button> */}
     </div>
   );
 }
